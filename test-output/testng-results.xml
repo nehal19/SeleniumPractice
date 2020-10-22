@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-10-21T14:11:54 IST" name="Default suite" finished-at="2020-10-21T14:11:54 IST" duration-ms="48">
+    <groups>
+    </groups>
+    <test started-at="2020-10-21T14:11:54 IST" name="Default test" finished-at="2020-10-21T14:11:54 IST" duration-ms="48">
+      <class name="com.selenium.Scenario6">
+        <test-method signature="checkCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.selenium.Scenario6@1a3ff68]" started-at="2020-10-21T14:11:54 IST" name="checkCredentials" data-provider="credentials" finished-at="2020-10-21T14:11:54 IST" duration-ms="8" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[username1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pass1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCredentials -->
+        <test-method signature="checkCredentials(java.lang.String, java.lang.String)[pri:0, instance:com.selenium.Scenario6@1a3ff68]" started-at="2020-10-21T14:11:54 IST" name="checkCredentials" data-provider="credentials" finished-at="2020-10-21T14:11:54 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[username2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pass2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkCredentials -->
+      </class> <!-- com.selenium.Scenario6 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
