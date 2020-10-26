@@ -8,8 +8,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class Scenario3 {
 	
@@ -24,8 +27,26 @@ WebDriver driver;
 	}
 	
 	@Test
-	public void medicalRecords() {
+	public void medicalRecords() throws InterruptedException {
 		driver.get("http://openclinic.sourceforge.net/openclinic/home/index.php");
+		driver.findElement(By.linkText("Medical Records")).sendKeys(Keys.CONTROL,Keys.ENTER);
+		
+		Set<String> windows = driver.getWindowHandles();
+		Iterator<String> it = windows.iterator();
+		
+		String parent = it.next();
+		String child = it.next();
+		
+		driver.switchTo().window(child);
+		driver.findElement(By.linkText("Search Patient")).click();
+		WebElement options = driver.findElement(By.id("search_type"));
+		Select selectFrom = new Select(options);
+		Thread.sleep(2000);
+		selectFrom.selectByVisibleText("First Name");
+		driver.findElement(By.id("search_patient")).click();
+		Thread.sleep(5000);
+		
+			
 	}
 	
 	@Test
@@ -55,10 +76,6 @@ WebDriver driver;
 		driver.switchTo().window(parentWindowId);
 		Thread.sleep(2000);
 		System.out.println("Parent Window Title:" + driver.getTitle());
-		
-		
-		
-		
 		
 	}
 	@After

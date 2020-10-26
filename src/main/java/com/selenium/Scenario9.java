@@ -9,7 +9,8 @@ public class Scenario9 {
 
 	public static void main(String[] args) throws IOException {
 		Properties prop = new Properties();
-		FileInputStream ip = new FileInputStream("D:\\Assignments\\src\\main\\resources\\config.properties");
+		FileInputStream ip = new FileInputStream("D:\\Assignments\\src\\main\\resources"
+				+ "\\config.properties");
 		prop.load(ip);
 		
 		System.out.println(prop.getProperty("browser"));
@@ -20,6 +21,6 @@ public class Scenario9 {
 		
 		System.out.println(prop.getProperty("password"));
 
-	}
+	} 
 
 }

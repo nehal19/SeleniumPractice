@@ -37,16 +37,16 @@ List<WebElement> links=driver.findElements(By.tagName("a"));
 		
 		System.out.println("Total links are "+links.size());
 		
-		System.setProperty("javax.net.ssl.trustStore", "C:/.keystore");
+		System.setProperty("javax.net.ssl.trustStore", "D:\\certs");
 		System.setProperty("javax.net.ssl.trustStorePassword", "changeit");
 		for(int i=0;i<links.size();i++)
 		{
-			
 			WebElement ele= links.get(i);
-			
+				
 			String url=ele.getAttribute("href");
-			
-			verifyLinkActive(url);
+			if(url!= null && (!url.contains("javascript"))) {
+				verifyLinkActive(url);
+			}
 			
 		}
 	}
@@ -57,8 +57,7 @@ List<WebElement> links=driver.findElements(By.tagName("a"));
            
            HttpURLConnection httpURLConnect=(HttpURLConnection)url.openConnection();
            
-           httpURLConnect.setConnectTimeout(3000);
-           
+           httpURLConnect.setConnectTimeout(3000);  
            httpURLConnect.connect();
            
            if(httpURLConnect.getResponseCode()==200)

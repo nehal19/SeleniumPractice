@@ -57,7 +57,7 @@ public class Scenario4 {
 	@Test
 	public void scroll() {
 		driver.get("http://openclinic.sourceforge.net/openclinic/home/index.php");
-		
+		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
 	}
 	
 	
